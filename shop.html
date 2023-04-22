@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Items for Sale</title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1058196310802583562/1098639042058395648/WhatsApp_Image_2023-04-19_at_22.49.41.jpg" type="image/jpg">
+    <style>
+      #logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-left: 80px;
+        margin-top: 10px;
+        background-color: gold;
+        color: purple;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .btn2 {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-left: 1650px;
+        margin-top: 10px;
+        background-color: gold;
+        color: purple;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #800080; 
+        color: #ffd700; 
+      }
+      h1 {
+        text-align: center;
+      }
+      .item {
+        display: flex;
+        margin-bottom: 20px;
+        border: 2px solid #ffd700; 
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #800080; 
+      }
+      .item img {
+        max-width: 200px;
+        margin-right: 20px;
+      }
+      .item h2 {
+        margin: 0;
+        color: #ffd700; 
+      }
+      .item p {
+        margin-top: 0;
+        font-weight: bold;
+      }
+      button {
+        background-color: #ffd700; 
+        color: #800080; 
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #800080; 
+        color: #ffd700; 
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="btn">Home</a>
+    
+    <img id="logo" src="https://cdn.discordapp.com/attachments/1058196310802583562/1098639042058395648/WhatsApp_Image_2023-04-19_at_22.49.41.jpg" alt="My Image" width="80" length="80"img>
+    <h1 style="color: #ffd700;">Items for Sale</h1>
+   
+    <div class="item">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.windowscentral.com%2Fsites%2Fwpcentral.com%2Ffiles%2Fstyles%2Flarge_wm_brw%2Fpublic%2Ffield%2Fimage%2F2020%2F11%2Flogitech-g-pro-superlight-7.jpg&f=1&nofb=1&ipt=dedc1f0796d3b1ae3e62b7218cc901c2240c93f5115319a3a19a558d8edc949f&ipo=images" alt="Logitech G Pro Superlight Gaming Mouse">
+      <div>
+        <h2>Logitech G Pro Superlight Gaming Mouse</h2>
+        <p>$130.99</p>
+        <p>Game smoothly with this top of the line gaming mouse</p>
+        <button onclick="addToCart('Product 1', 130.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pcgamesn.com%2Fwp-content%2Fuploads%2F2020%2F02%2Flogitech-g-pro-x-gaming-keyboard-review.jpg&f=1&nofb=1&ipt=d9139426ae17a1ee24177b7232253e2e4a2b8d1f467ba6a3ab560664cd53d110&ipo=images" alt="Logitech G Pro X Gaming Keyboard">
+      <div>
+        <h2>Logitech G Pro X Gaming Keyboard</h2>
+        <p>$100.99</p>
+        <p>High Tech keyboard to help you win every game in style.</p>
+        <button onclick="addToCart('Product 2', 100.99)">Add to Cart</button>
+      </div>
+    </div>
+
+      <div class="item">
+        <img src="https://cdn.discordapp.com/attachments/1058196310802583562/1099458022398500915/WhatsApp_Image_2023-04-22_at_23.13.28.jpg" alt="MGH$ Hoodie">
+        <div>
+        <h2>MGH$ Hoodie</h2>
+          <p>$29.99</p>
+          <p>Trendy hoodie with an amazing design</p>
+          <button onclick="addToCart('Product 3', 29.99)">Add to Cart</button>
+        </div>
+
+    </div>
+    <button onclick="viewCart()">View Cart</button>
+
+    <script>
+      var cart = [];
+
+      function addToCart(product, price) {
+        cart.push({product: product, price: price});
+        alert(product + ' added to cart!');
+      }
+
+      function viewCart() {
+        var cartItems = '';
+        var total = 0;
+        for (var i = 0; i < cart.length; i++) {
+          cartItems += cart[i].product + ' - $' + cart[i].price.toFixed(2) + '\n';
+          total += cart[i].price;
+        }
+        if (cartItems === '') {
+          alert('Your cart is empty.');
+        } else {
+          alert(cartItems + '\nTotal: $' + total.toFixed(2));
+        }
+      }
+    </script>
+
+  </body>
+</html>
